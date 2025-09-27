@@ -28,5 +28,3 @@ This Proof of Concept demonstrates:
 - **Frontend**: Vanilla HTML5, CSS3, JavaScript
 - **ZK Integration**: Simulated Soundness Layer proof system
 - **Storage**: Browser local storage for game progress
-
-## File Structure
