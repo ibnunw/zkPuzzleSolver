@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zkPuzzleSolver - PoC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧩 zkPuzzleSolver</h1>
+            <p>Solve puzzles and generate zero-knowledge proofs for your solutions!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="puzzle-selection">
+                <h3>Select Puzzle Type:</h3>
+                <button onclick="selectPuzzle('number')">Number Puzzle</button>
+                <button onclick="selectPuzzle('grid')">Grid Logic</button>
+            </div>
+
+            <div id="puzzleContainer" class="puzzle-container hidden">
+                <div class="puzzle-header">
+                    <h3 id="puzzleTitle">Puzzle Title</h3>
+                    <div class="puzzle-info">
+                        <span>Difficulty: <span id="difficulty">Easy</span></span>
+                        <span>Time: <span id="timer">00:00</span></span>
+                    </div>
+                </div>
+                
+                <div id="puzzleContent" class="puzzle-content">
+                    <!-- Puzzle content will be dynamically loaded -->
+                </div>
+
+                <div class="puzzle-controls">
+                    <button onclick="checkSolution()" id="checkBtn">Check Solution</button>
+                    <button onclick="generateProof()" id="proofBtn" disabled>Generate Proof</button>
+                    <button onclick="resetPuzzle()">Reset Puzzle</button>
+                </div>
+            </div>
+
+            <div id="proofSection" class="proof-section hidden">
+                <h3>Zero-Knowledge Proof</h3>
+                <div class="proof-output">
+                    <textarea id="proofOutput" readonly placeholder="Your proof will appear here..."></textarea>
+                    <div class="proof-actions">
+                        <button onclick="copyProof()">Copy Proof</button>
+                        <button onclick="verifyProof()">Verify Proof</button>
+                        <button onclick="shareProof()">Share Challenge</button>
+                    </div>
+                </div>
+                <div id="proofStatus" class="status"></div>
+            </div>
+        </div>
+
+        <div class="leaderboard hidden">
+            <h3>Progress</h3>
+            <div id="progressList"></div>
+        </div>
+    </div>
+
+    <script src="puzzle-logic.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
